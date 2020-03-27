@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head> 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    </head>
 <body>
 
 <h2>Finding HTML Elements by Tag Name</h2>
@@ -10,7 +15,7 @@
 </div>
 
 <p id="demo"></p>
-<div id="myDiv"></div>
+<div id='myDiv'></div>
 
 <script>
 /*var x = document.getElementById("main");
@@ -23,7 +28,8 @@ var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
 if (this.readyState === this.DONE) {
-console.log(this.responseText);
+data = this.responseText;
+insertData(data);
 }
 });
 xhr.open("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2020-09-01?inboundpartialdate=2020-12-01");
