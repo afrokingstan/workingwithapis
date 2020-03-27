@@ -10,19 +10,20 @@
 </div>
 
 <p id="demo"></p>
+<div id="myDiv"></div>
 
 <script>
-var x = document.getElementById("main");
+/*var x = document.getElementById("main");
 var y = x.getElementsByTagName("p");
-
+var z = document.getElementById("demo"); */
 
 
 var data = null;
 var xhr = new XMLHttpRequest();
-//xhr.withCredentials = true;
+xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
 if (this.readyState === this.DONE) {
-document.getElementById("demo").innerHTML = (this.responseText);
+console.log(this.responseText);
 }
 });
 xhr.open("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2020-09-01?inboundpartialdate=2020-12-01");
@@ -30,6 +31,10 @@ xhr.setRequestHeader("x-rapidapi-host", "skyscanner-skyscanner-flight-search-v1.
 xhr.setRequestHeader("x-rapidapi-key", "896d18a8dbmsh2e10ef61871b745p17c70ajsn77222fa56caa");
 xhr.send(data);
 
+  function insertData(data){
+    $(#myDiv).text(data.MinPrice);
+  }
+  
 </script>
 
 </body>
