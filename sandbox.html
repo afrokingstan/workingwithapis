@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Finding HTML Elements by Tag Name</h2>
+
+<div id="main">
+<p>The is the API response data.</p>
+<p>This example demonstrates the how to unpackthe response data</p>
+</div>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("main");
+var y = x.getElementsByTagName("p");
+
+
+
+var data = null;
+var xhr = new XMLHttpRequest();
+//xhr.withCredentials = true;
+xhr.addEventListener("readystatechange", function () {
+if (this.readyState === this.DONE) {
+document.getElementById("demo").innerHTML = (this.responseText);
+}
+});
+xhr.open("GET", "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/2020-09-01?inboundpartialdate=2020-12-01");
+xhr.setRequestHeader("x-rapidapi-host", "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com");
+xhr.setRequestHeader("x-rapidapi-key", "896d18a8dbmsh2e10ef61871b745p17c70ajsn77222fa56caa");
+xhr.send(data);
+
+</script>
+
+</body>
+</html>
